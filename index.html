@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuelos Baratos - Promociones a Ciudades de Colombia</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .btn-animated {
+      transition: background-color 0.3s, transform 0.3s;
+      text-transform: uppercase;
+    }
+    .btn-animated:hover {
+      background-color: #3B82F6;
+      transform: scale(1.05);
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 font-sans">
+  <header class="bg-blue-400 text-white p-6 text-center shadow-md">
+    <h1 class="text-2xl sm:text-3xl font-bold mb-2">¡Vuela por menos con nuestras promociones!</h1>
+    <p class="text-sm sm:text-base max-w-xl mx-auto">Encuentra vuelos económicos hacia las principales ciudades de Colombia. Ideal para vacaciones, viajes familiares o de negocios. ¡No dejes pasar estas oportunidades!</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-4 sm:p-6 mt-6 bg-white rounded-xl shadow-xl">
+    <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-center text-blue-900 uppercase">OFERTAS DESTACADAS ✈️</h2>
+    <div class="grid grid-cols-1 gap-5">
+      <div class="bg-blue-50 p-4 rounded-lg shadow">
+        <h3 class="text-lg font-bold text-blue-700">Bogotá - Medellín ✈️</h3>
+        <p class="mt-1 text-sm">Desde <span class="text-green-600 font-semibold">$49.900</span></p>
+        <a href="https://latamviajarwebcolprom.com/Web-Co" target="_blank">
+          <button class="btn-animated mt-3 bg-blue-400 text-white px-4 py-2 rounded-lg w-full">RESERVAR</button>
+        </a>
+      </div>
+      <div class="bg-blue-50 p-4 rounded-lg shadow">
+        <h3 class="text-lg font-bold text-blue-700">Cali - Cartagena ✈️</h3>
+        <p class="mt-1 text-sm">Desde <span class="text-green-600 font-semibold">$49.900</span></p>
+        <a href="https://latamviajarwebcolprom.com/Web-Co" target="_blank">
+          <button class="btn-animated mt-3 bg-blue-400 text-white px-4 py-2 rounded-lg w-full">RESERVAR</button>
+        </a>
+      </div>
+      <div class="bg-blue-50 p-4 rounded-lg shadow">
+        <h3 class="text-lg font-bold text-blue-700">Barranquilla - Santa Marta ✈️</h3>
+        <p class="mt-1 text-sm">Desde <span class="text-green-600 font-semibold">$49.900</span></p>
+        <a href="https://latamviajarwebcolprom.com/Web-Co" target="_blank">
+          <button class="btn-animated mt-3 bg-blue-400 text-white px-4 py-2 rounded-lg w-full">RESERVAR</button>
+        </a>
+      </div>
+      <div class="bg-blue-50 p-4 rounded-lg shadow">
+        <h3 class="text-lg font-bold text-blue-700">Pereira - Manizales ✈️</h3>
+        <p class="mt-1 text-sm">Desde <span class="text-green-600 font-semibold">$49.900</span></p>
+        <a href="https://latamviajarwebcolprom.com/Web-Co" target="_blank">
+          <button class="btn-animated mt-3 bg-blue-400 text-white px-4 py-2 rounded-lg w-full">RESERVAR</button>
+        </a>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="https://latamviajarwebcolprom.com/Web-Co" target="_blank">
+        <button class="btn-animated pulse bg-blue-400 text-white text-lg sm:text-xl px-6 py-3 sm:px-10 sm:py-5 rounded-full shadow-lg">¡RESERVA AHORA!</button>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
