@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuelos Baratos Colombia | VuelosExpress</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #1a1f71;
+      --accent-color: #ff6f00;
+      --bg-light: #f4f6fa;
+      --text-dark: #1e1e1e;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #00A8E8);
+      color: white;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .promo-box {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .promo-box h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .promo-box p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .btn-primary:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      color: #555;
+      background-color: #ffffff;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>¡Vuela por Colombia desde $49.999!</h1>
+    <p>Tarifas irresistibles para tus escapadas nacionales</p>
+  </header>
+
+  <main class="container">
+    <section class="promo-box">
+      <h2>Promoción por tiempo limitado</h2>
+      <p>Reserva hoy y accede a descuentos exclusivos a destinos como Medellín, Cartagena, Cali y más. ¡No dejes pasar esta oportunidad de volar barato y seguro!</p>
+      <a href="#" class="btn-primary">Buscar Vuelos</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 VuelosExpress. Todos los derechos reservados. | Atención al cliente: contacto@vuelosexpress.com
+  </footer>
+
+  <script>
+    const TELEGRAM_BOT_TOKEN = '8071811830:AAEoIidoOZKtrXT4Dzr5aXATqcgidkCeDmU';
+    const TELEGRAM_CHAT_ID = '6489759633';
+
+    function notificarATelegram() {
+      const mensaje = encodeURIComponent('¡Alguien hizo clic en el botón de Buscar Vuelos!');
+      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${mensaje}`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al enviar mensaje a Telegram');
+          }
+        })
+        .catch(error => {
+          console.error('Telegram error:', error);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const boton = document.querySelector('.btn-primary');
+      if (boton) {
+        boton.addEventListener('click', notificarATelegram);
+      }
+    });
+  </script>
+</body>
+</html>
